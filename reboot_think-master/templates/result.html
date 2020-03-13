@@ -1,0 +1,47 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+body {background-color: rgb(0, 98, 227);}
+h5 {
+  border: 1px solid powderblue;
+  padding: 30px;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 200%; 
+  height: 200%; 
+  overflow: auto; 
+  background-color: #3c75f0;
+  padding-top: 100px;
+}
+
+
+.modal-content {
+  background-color: #fcfcf8;
+  margin: 15% auto 20% auto;  
+  border: 10px solid rgb(246, 246, 247);
+  width: 80%; 
+ height:50%;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 50px;
+}
+</style>
+<body style="text-align:center;">
+  <form class="modal-content" action="/action_page.php">
+ 
+<h1>Result</h1>
+<h5>Expected Marks for {{ key }} is : {{  marks }} </h5>
+<h5>The summary of the uploaded answer sheet is :</h5>
+<h5>
+    <div>{{ summary }}</div>
+    
+</body>
+</html>

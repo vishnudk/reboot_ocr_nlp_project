@@ -1,0 +1,74 @@
+{% load static %}
+<html>
+	<head>
+		<title>Login Page</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="crossorigin="anonymous"></script>
+	</head>
+
+
+	<body>
+
+		<script>
+			$(document).ready(function(){
+				$("#submit-login").click(function(){
+					var user = $('#login-username').val();
+					var pass = $('#login-password').val();
+					$("#signup-login").click(function(){
+			});
+
+					if(user=="admin"&&pass=="admin")
+					{
+					   window.location.href = "~/upload.html";
+					}
+					else
+					{
+					    $("#login-text").text("Incorrect Username/Password.");
+
+					}
+				});
+
+
+       $("#signup-login").click(function(){
+				window.location.href = "{% static 'index.html' %}";
+			});
+
+			});
+		</script>
+
+		<div class="bg-info d-flex justify-content-center align-items-center p-2" style="height: 100vh; width: 100vw;">
+			<div class="bg-info p-4" style="min-width: 25rem;">
+				<h3 class="text-center   font-weight-bold">LOGIN</h3>
+				<form>
+					  <div class="form-group  font-weight-bold">
+						<label for="Email">Username</label>
+						<input class="form-control" id="login-username" aria-describedby="emailHelp" placeholder="Enter Username">
+					  </div>
+					  <div class="form-group  font-weight-bold">
+
+						<label for="Password">Password</label>
+						<input type="password" class="form-control" id="login-password" placeholder="Enter Password">
+					  </div>
+
+
+					  <div id="login-text" class="text-danger"></div>
+					  <div id="submit-login" class="btn btn-warning">Login</div>
+
+
+						<p class="text-dark">
+						  Don't have an account?   <a href="{% static '/index.html' %}" class="text-warning">  Signup </a>
+						</p>
+
+						<p class="text-dark">
+							<a href="file:///Users/akhil/Desktop/LOGIN/forgot.html" class="text-danger">  Forgot Password?</a>
+						</p>
+
+					<!--	<a href="file:///Users/akhil/Desktop/LOGIN/forgot.html">forgot password?</a>-->
+
+				</form>
+			</div>
+		</div>
+		<div class="d-absolute text-center p-2 text-dark bg-info font-weight-bold" style="bottom: 0;">&copy; Think! 2020.</div>
+	</body>
+</html>

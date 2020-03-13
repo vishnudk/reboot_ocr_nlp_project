@@ -1,0 +1,71 @@
+{% load static %}
+<html>
+	<head>
+		<title>Login Page</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	</head>
+<body>
+
+  <script>
+    $(document).ready(function(){
+      $("#signup-login").click(function(){
+        console.log('hello');
+        var pass1 = $('#create-password').val();
+        var pass2 = $('#renter-password').val();
+        console.log(pass1, pass2);
+        if(pass1==pass2)
+        {
+           window.location.href = "file:///Users/akhil/Desktop/LOGIN/login.html";
+        }
+        else
+        {
+            $("#login-text").text("Password does not match.");
+
+        }
+      });
+    });
+
+      </script>
+
+  <div class="bg-info d-flex justify-content-center align-items-center p-2" style="height: 100vh; width: 100vw;">
+    <div class="bg-info p-4" style="min-width: 25rem;">
+      <h3 class="text-center   font-weight-bold">SIGN UP</h3>
+      <form>
+        {% csrf_token %}
+        {{ form }}
+          <div class="form-group  font-weight-bold">
+          <label for="Email">Create Username</label>
+          <input class="form-control" id="login-username" aria-describedby="emailHelp" placeholder="Enter Username">
+          </div>
+
+          <div class="form-group  font-weight-bold">
+          <label for="Email">Enter Email </label>
+          <input class="form-control" id="login-username" aria-describedby="emailHelp" placeholder="Enter Email">
+          </div>
+
+          <div class="form-group  font-weight-bold">
+          <label for="Password">Create Password</label>
+          <input type="password" class="form-control" id="create-password" placeholder="Enter Password">
+          </div>
+
+          <div class="form-group  font-weight-bold">
+          <label for="Password">Renter Password</label>
+          <input type="password" class="form-control" id="renter-password" placeholder="Enter Password">
+          </div>
+
+          <div id="login-text" class="text-danger"></div>
+
+          <!--
+          <div id="login-text" class="text-danger"></div>
+          <div id="submit-login" class="btn btn-warning">Login</div>
+          <label>Click here to sign up</label>-->
+
+          <div id="signup-login" class="btn btn-warning">Signup</div>
+      </form>
+    </div>
+  </div>
+  <div class="d-absolute text-center p-2 text-dark bg-info font-weight-bold" style="bottom: 0;">&copy; Think! 2020.</div>
+</body>
+</html>

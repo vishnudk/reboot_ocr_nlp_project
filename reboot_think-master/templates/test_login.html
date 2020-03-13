@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #C0C0C0;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+button {
+  background-color: 
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+ .signupbtn {
+  float:center;
+  width: 100%;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto 5% auto;  
+  border: 1px solid #888;
+  width: 25%; 
+}
+
+
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 50%;
+ 
+}
+</style>
+<body>
+
+
+    <h1 style="text-align:center; color:black;">LOGIN </h1>
+  <form action="login" method="POST">
+    {% csrf_token %}
+    <div class="container">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter username" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">LOGIN</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+</body>
+</html>
