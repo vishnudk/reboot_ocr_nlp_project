@@ -23,7 +23,7 @@ image-geometry==1.12.8
 interactive-markers==1.11.4
 laser-geometry==1.6.4
 message-filters==1.12.14
-Pillow==7.0.0
+Pillow==9.3.0
 pluginlib==1.11.3
 python-qt-binding==0.3.4
 pytz==2019.3
